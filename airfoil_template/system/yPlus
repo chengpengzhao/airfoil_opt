@@ -19,10 +19,4 @@ yPlus
     writeControl    writeTime;
 
     patches         (airfoil-l1 airfoil-l2 airfoil-h1 airfoil-h2);
-    binData
-        {
-            nBin        21;
-            direction   (1 0 0);
-            cumulative  yes;
-        }
 }

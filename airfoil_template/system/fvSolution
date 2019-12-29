@@ -19,10 +19,12 @@ solvers
 {
     p
     {
-        solver          GAMG;
-        tolerance       1e-03;
+        //solver          GAMG;
+        solver          PBiCGStab;
+        tolerance       1e-05;
         relTol          0.01;
-        smoother        GaussSeidel;
+        //smoother        GaussSeidel;
+        preconditioner  DIC;
     }
 
     U
@@ -30,7 +32,7 @@ solvers
         solver          smoothSolver;
         smoother        GaussSeidel;
         nSweeps         2;
-        tolerance       1e-03;
+        tolerance       1e-05;
         relTol          0.01;
     }
 
@@ -39,20 +41,20 @@ solvers
         solver          smoothSolver;
         smoother        GaussSeidel;
         nSweeps         2;
-        tolerance       1e-03;
+        tolerance       1e-05;
         relTol          0.01;
     }
 }
 
 SIMPLE
 {
-    nNonOrthogonalCorrectors 0;
+    nNonOrthogonalCorrectors 2;
 
     residualControl
     {
-        p               1e-4;
-        U               1e-4;
-        nuTilda         1e-4;
+        p               1e-6;
+        U               1e-6;
+        nuTilda         1e-6;
     }
 }
 

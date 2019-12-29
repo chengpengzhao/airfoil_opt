@@ -16,8 +16,10 @@ FoamFile
 
 dimensions      [0 1 -1 0 0 0 0];
 
-internalField      uniform (51.0527 0 0);
-
+internalField      uniform (51.4815 0 0); //0deg
+//internalField      uniform (50.6994 8.9397 0.00 ); //10deg
+//internalField      uniform (49.7273 13.3244 0.00 ); //15deg
+//Ma=0.15
 boundaryField
 {
 
@@ -62,6 +64,7 @@ boundaryField
     }
     outlet-l
     {
+        //type            zeroGradient;
         type            freestreamVelocity;
         freestreamValue $internalField;
     }
@@ -75,6 +78,7 @@ boundaryField
     }
     outlet-h
     {
+        //type            zeroGradient;
         type            freestreamVelocity;
         freestreamValue $internalField;
     }

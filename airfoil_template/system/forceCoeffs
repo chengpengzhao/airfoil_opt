@@ -27,12 +27,12 @@ forceCoeffs
     U               U;
     rho     rhoInf;
     log         true;
-    rhoInf      1.225;
+    rhoInf      1;  //for compressible cases 	
     // Reference pressure [Pa]
     pRef            0;
 
     // Include porosity effects?
-    porosity        yes;
+    porosity        false;
 
     // Store and write volume field representations of forces and moments
     writeFields     yes;
@@ -41,28 +41,30 @@ forceCoeffs
     CofR            (0.25 0 0);
 
     // Lift direction
-    liftDir         (0 1 0);
-
+    liftDir         (0 1 0);	//0deg
+    //liftDir         (-0.173648 0.984808 0);	//10deg
+    //liftDir         (-0.258819 0.965926 0);	//15deg
     // Drag direction
-    dragDir         (1 0 0);
-
+    dragDir         (1 0 0);	//0deg
+    //dragDir         (0.984808 0.173648 0);	//10deg
+    //dragDir         (0.965926 0.258819 0);	//15deg
     // Pitch axis
     pitchAxis       (0 0 1);
 
     // Freestream velocity magnitude [m/s]
-    magUInf         50;
+    magUInf         51.4815;
 
-    // Reference length [m]
+    // Reference length [m]z
     lRef            1;
 
-    // Reference area [m2]
-    Aref            1.2;
+    // Reference area [m2] . xte*length_z 
+    Aref            0.01;
 
     // Spatial data binning
     // - extents given by the bounds of the input geometry
     binData
     {
-        nBin        21;
+        nBin        31;
         direction   (1 0 0);
         cumulative  yes;
     }

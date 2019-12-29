@@ -23,13 +23,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         500;
+endTime         2000;
 
 deltaT          1;
 
 writeControl    timeStep;
 
-writeInterval   25;
+writeInterval   200;
 
 purgeWrite      0;
 
@@ -47,8 +47,9 @@ runTimeModifiable true;
 
 functions 
 {
-//    #include "forceCoeffs"
+    #include "forceCoeffs"
     #include "yPlus"
+    #includeFunc  residuals
 };
 
 // ************************************************************************* //
